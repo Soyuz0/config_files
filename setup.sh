@@ -8,3 +8,4 @@ sudo apt install make gcc ripgrep unzip git xclip npm python3.10-venv neovim
 # git remote add origin https://github.com/Soyuz0/config_files.git
 # git fetch
 # git checkout -t origin/main
+# brew install make gcc ripgrep unzip git xclip node python@3.10 neovim
