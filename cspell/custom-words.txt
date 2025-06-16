@@ -1,3 +1,6 @@
+Neotree
 everart
 gdrive
+keymap
 modelcontextprotocol
+nvim
