@@ -12,6 +12,17 @@ return {
 		-- See Commands section for default commands if you want to lazy load on them
 		keys = {
 			{ '<leader>zc', '<cmd>CopilotChat<cr>',         mode = 'n', desc = ' Copilot Chat' },
+			{
+				'<leader>zf',
+				function()
+					local chat = require 'CopilotChat'
+					chat.open()
+					local line = vim.fn.line '.'
+					vim.api.nvim_buf_set_lines(0, line, line, false, { '#buffer' })
+				end,
+				mode = 'n',
+				desc = ' Chat About Current File',
+			},
 			{ '<leader>ze', '<cmd>CopilotChatExplain<cr>',  mode = 'v', desc = ' Explain Code' },
 			{ '<leader>zr', '<cmd>CopilotChatReview<cr>',   mode = 'v', desc = ' Review Code' },
 			{ '<leader>zf', '<cmd>CopilotChatFix<cr>',      mode = 'v', desc = ' Fix Code' },
