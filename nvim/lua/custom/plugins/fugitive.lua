@@ -1,6 +1,6 @@
 return {
-  'tpope/vim-fugitive',
-  config = function()
-    vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git viewer' })
-  end,
+	'tpope/vim-fugitive',
+	config = function()
+		vim.keymap.set('n', '<leader>gv', vim.cmd.Git, { desc = '[G]it [v]iewer' })
+	end,
 }
