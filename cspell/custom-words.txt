@@ -1,6 +1,11 @@
+Exfiltration
 Neotree
+abatch
+deepkeep
 everart
 gdrive
 keymap
 modelcontextprotocol
 nvim
+text_embedder_name
+whitebox
