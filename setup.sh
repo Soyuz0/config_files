@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
-sudo apt install make gcc ripgrep unzip git xclip npm tmux python3.10-venv neovim
+sudo apt install -y make gcc ripgrep unzip git xclip npm tmux python3.10-venv neovim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # git clone https://github.com/Soyuz0/config_files.git "${XDG_CONFIG_HOME:-$HOME/.config}"
 # git init "${XDG_CONFIG_HOME:-$HOME/.config}"
