@@ -22,7 +22,7 @@ return {
     local function refresh_keys()
       -- wipe old <leader>1-9 bindings
       for i = 1, 9 do
-        pcall(vim.keymap.del, 'n', ('<BS>%d'):format(i))
+        pcall(vim.keymap.del, 'n', ('<CR>%d'):format(i))
       end
 
       -- bind only existing items
@@ -30,7 +30,7 @@ return {
         if i > 9 then
           break
         end
-        local lhs = ('<BS>%d'):format(i)
+        local lhs = ('<CR>%d'):format(i)
         local desc = item.value and vim.fn.fnamemodify(item.value, ':~:.') or '<empty>'
         vim.keymap.set('n', lhs, function()
           list:select(i)
@@ -42,11 +42,11 @@ return {
     --------------------------------------------------------------------------
     -- wrap add-file so keys update instantly
     --------------------------------------------------------------------------
-    vim.keymap.set('n', '<BS>f', function()
+    vim.keymap.set('n', '<CR>f', function()
       list:append()
       refresh_keys()
     end, { desc = 'Harpoon: add file' })
-    vim.keymap.set('n', '<BS>e', function()
+    vim.keymap.set('n', '<CR>e', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = 'Harpoon: Toggle quick menu' })
     --------------------------------------------------------------------------
