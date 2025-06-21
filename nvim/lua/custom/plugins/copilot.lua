@@ -31,4 +31,24 @@ return {
 			{ '<leader>zt', '<cmd>CopilotChatTests<cr>',    mode = 'v', desc = ' Generate Tests' },
 		},
 	},
+	-- Lazy
+	{
+		'jackMort/ChatGPT.nvim',
+		event = 'VeryLazy',
+		config = function()
+			local key = vim.env.OPEN_AI_NVIM_KEY
+			require('chatgpt').setup {
+				api_key_cmd = string.format('echo %s', key),
+			}
+		end,
+		dependencies = {
+			'MunifTanjim/nui.nvim',
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope.nvim',
+		},
+		keys = {
+
+			{ '<leader>zx', '<cmd>ChatGPTCompleteCode<cr>', mode = '', desc = ' Complete Code' },
+		},
+	},
 }
