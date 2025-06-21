@@ -43,7 +43,7 @@ return {
     -- wrap add-file so keys update instantly
     --------------------------------------------------------------------------
     vim.keymap.set('n', '<CR>f', function()
-      list:append()
+      list:add()
       refresh_keys()
     end, { desc = 'Harpoon: add file' })
     vim.keymap.set('n', '<CR>e', function()
