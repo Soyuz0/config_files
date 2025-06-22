@@ -42,7 +42,7 @@ return {
 		table.insert(
 			sources,
 			cspell.diagnostics.with {
-				filetypes = { 'lua', 'python', 'markdown', 'javascript', 'typescript' },
+				filetypes = { 'lua', 'python', 'markdown', 'javascript', 'typescript', 'txt' },
 				diagnostics_postprocess = function(diagnostic)
 					diagnostic.severity = vim.diagnostic.severity.HINT
 				end,
