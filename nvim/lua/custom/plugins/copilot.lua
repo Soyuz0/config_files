@@ -36,7 +36,7 @@ return {
 		'jackMort/ChatGPT.nvim',
 		event = 'VeryLazy',
 		config = function()
-			local key = vim.env.OPEN_AI_NVIM_KEY
+			local key = vim.env.OPENAI_API_KEY
 			require('chatgpt').setup {
 				openai_params = {
 					model = 'gpt-4o',
