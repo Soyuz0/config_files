@@ -1,3 +1,5 @@
+huggingface
+huggingface_hub
 Exfiltration
 Neotree
 abatch
