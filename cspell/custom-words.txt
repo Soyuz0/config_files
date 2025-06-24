@@ -1,9 +1,11 @@
 Exfiltration
 Neotree
 abatch
+deberta
 deepkeep
 everart
 gdrive
+gliner
 keymap
 modelcontextprotocol
 nvim
