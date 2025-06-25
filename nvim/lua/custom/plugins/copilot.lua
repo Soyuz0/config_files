@@ -2,8 +2,26 @@ return {
   {
     'CopilotC-Nvim/CopilotChat.nvim',
     dependencies = {
-      { 'github/copilot.vim' }, -- or zbirenbaum/copilot.lua
-      { 'nvim-lua/plenary.nvim', branch = 'master' }, -- for curl, log and async functions
+      {
+        'github/copilot.vim',
+        init = function()
+          vim.g.copilot_no_tab_map = true -- must go here, before plugin loads
+        end,
+        config = function()
+          vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+            expr = true,
+            replace_keycodes = false,
+            desc = 'Copilot Accept',
+          })
+          -- override Tab to insert literal Tab
+          vim.keymap.set('i', '<Tab>', '<Tab>', {
+            noremap = true,
+            silent = true,
+            desc = 'Insert Tab (disable Copilot)',
+          })
+        end,
+      },
+      { 'nvim-lua/plenary.nvim', branch = 'master' },
     },
     event = 'VeryLazy',
     build = 'make tiktoken', -- Only on MacOS or Linux
@@ -30,14 +48,15 @@ return {
       { '<leader>zo', '<cmd>CopilotChatOptimize<cr>', mode = 'v', desc = ' Optimize Code' },
       { '<leader>zd', '<cmd>CopilotChatDocs<cr>', mode = 'v', desc = ' Add Documentation' },
       { '<leader>zt', '<cmd>CopilotChatTests<cr>', mode = 'v', desc = ' Generate Tests' },
-    },
-    config = function()
-      vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+      {
+        '<C-J>',
+        'copilot#Accept("\\<CR>")',
+        mode = 'i',
         expr = true,
         replace_keycodes = false,
-      })
-      vim.g.copilot_no_tab_map = true
-    end,
+        desc = 'Copilot Accept',
+      },
+    },
   },
   -- Lazy
   {
