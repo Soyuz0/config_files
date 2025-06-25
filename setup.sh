@@ -10,3 +10,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # git fetch
 # git checkout -t origin/main
 # brew install make gcc ripgrep unzip git xclip node tmux python@3.10 neovim
+#
+# ZSH
+sudo apt install -y zsh fzf
