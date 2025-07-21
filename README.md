@@ -1,0 +1,1 @@
+when looking for neovim setups try kickstart.nv its the best
